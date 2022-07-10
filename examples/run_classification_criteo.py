@@ -1,3 +1,7 @@
+# 20220711
+# 暂时还无法在 apple m1 pro 上跑通本例子。因为 pytorch 的 m1 支持还不完善
+# Classification: Criteo
+
 # -*- coding: utf-8 -*-
 import pandas as pd
 import torch
@@ -45,7 +49,9 @@ if __name__ == "__main__":
 
     # 4.Define Model,train,predict and evaluate
 
-    device = 'cpu'
+    # device = 'cpu'
+    # 修改为 apple m1 写法
+    device = 'mps'
     use_cuda = True
     if use_cuda and torch.cuda.is_available():
         print('cuda ready...')
